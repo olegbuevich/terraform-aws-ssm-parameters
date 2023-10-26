@@ -9,4 +9,5 @@ resource "aws_ssm_parameter" "this" {
   description = try(each.value.description, null)
   value       = each.value.value
   type        = try(each.value.type, "String")
+  tags        = var.tags
 }
